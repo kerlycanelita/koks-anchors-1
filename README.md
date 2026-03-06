@@ -2,6 +2,14 @@
 
 Mod Fabric para Minecraft **1.21.10** que optimiza el uso de **Respawn Anchors** en escenarios de PvP (Anchor/Crystal), reduciendo desincronizacion visual y spam de interacciones.
 
+## Estado del proyecto
+
+KoKs Anchors es una **beta descontinuada** y **ya no recibira actualizaciones**.
+
+Este repositorio se mantiene solo como referencia historica. Las funciones de esta beta ya fueron integradas en **KoHs Mods Suite**, que es la version final recomendada.
+
+Si buscas soporte, mejoras o nuevas versiones, usa KoHs Mods Suite en lugar de este proyecto.
+
 ## Que hace el proyecto
 
 - Aplica **debounce client-side** en colocacion de Respawn Anchor.
