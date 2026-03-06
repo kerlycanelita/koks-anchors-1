@@ -1,0 +1,21 @@
+# Gradle
+.gradle/
+build/
+out/
+
+# Fabric Loom run dirs
+run/
+runs/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Local env/config
+*.log
+.env

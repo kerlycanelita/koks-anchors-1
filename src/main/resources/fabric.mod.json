@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "id": "koks-anchors",
+  "version": "${version}",
+  "name": "KoKs Anchors",
+  "description": "Advanced Respawn Anchor optimization mod. Eliminates ghost blocks, reduces placement lag, and adds configurable debounce systems for competitive PvP.",
+  "authors": [
+    "KoHs Development",
+    "Zymekoh"
+  ],
+  "contact": {
+    "homepage": "https://github.com/KoHsDevelopment/KoKsAnchors",
+    "sources": "https://github.com/KoHsDevelopment/KoKsAnchors"
+  },
+  "license": "GPL-3.0-only",
+  "icon": "assets/koks-anchors/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.ppuetate.koksanchors.KoKsAnchors"
+    ],
+    "client": [
+      "com.ppuetate.koksanchors.KoKsAnchorsClient"
+    ],
+    "modmenu": [
+      "com.ppuetate.koksanchors.config.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "koks-anchors.mixins.json",
+    {
+      "config": "koks-anchors.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.10",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "cloth-config": "*",
+    "modmenu": "*"
+  }
+}
+

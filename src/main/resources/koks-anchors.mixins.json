@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.ppuetate.koksanchors.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "server.ServerAnchorInteractionMixin",
+    "server.ServerAnchorPlacementMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
