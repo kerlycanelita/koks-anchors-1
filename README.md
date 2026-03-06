@@ -1,49 +1,49 @@
 # KoKs Anchors
 
-Mod Fabric para Minecraft **1.21.10** que optimiza el uso de **Respawn Anchors** en escenarios de PvP (Anchor/Crystal), reduciendo desincronizacion visual y spam de interacciones.
+A Fabric mod for Minecraft **1.21.10** focused on **Respawn Anchor** interaction optimization for PvP (Anchor/Crystal), reducing desync and interaction spam.
 
-## Estado del proyecto
+## Project Status
 
-KoKs Anchors es una **beta descontinuada** y **ya no recibira actualizaciones**.
+KoKs Anchors is a **discontinued beta** and **will no longer receive updates**.
 
-Este repositorio se mantiene solo como referencia historica. Las funciones de esta beta ya fueron integradas en **KoHs Mods Suite**, que es la version final recomendada.
+This repository is kept for historical reference only. The same features from this beta have been integrated into **KoHs Mods Suite**, which is the finalized and recommended version.
 
-Si buscas soporte, mejoras o nuevas versiones, usa KoHs Mods Suite en lugar de este proyecto.
+If you need support, improvements, or new releases, use KoHs Mods Suite instead of this project.
 
-## Que hace el proyecto
+## What This Project Does
 
-- Aplica **debounce client-side** en colocacion de Respawn Anchor.
-- Aplica **debounce client-side** en carga con Glowstone.
-- Aplica **validacion server-side** para rechazar spam de interacciones demasiado rapido.
-- Sincroniza estado real del anchor (cargas) con payloads S2C `anchor_confirm` y `anchor_reject`.
-- Incluye pantalla de configuracion con **Mod Menu + Cloth Config** (si estan presentes).
-- Incluye pantalla fallback vanilla si Cloth Config no esta disponible.
+- Applies **client-side debounce** for Respawn Anchor placement.
+- Applies **client-side debounce** for Glowstone charging interactions.
+- Applies **server-side validation** to reject excessively fast interaction spam.
+- Synchronizes the real anchor charge state via S2C payloads `anchor_confirm` and `anchor_reject`.
+- Includes a config screen through **Mod Menu + Cloth Config** (when available).
+- Includes a vanilla fallback config screen if Cloth Config is not installed.
 
-## Arquitectura tecnica
+## Technical Architecture
 
-- Entrada comun: `com.ppuetate.koksanchors.KoKsAnchors`
-- Entrada cliente: `com.ppuetate.koksanchors.KoKsAnchorsClient`
-- Mixins servidor: `ServerAnchorPlacementMixin` y `ServerAnchorInteractionMixin`
-- Mixins cliente: `ClientBlockPlacementMixin` y `ClientAnchorRenderMixin`
-- Red: `AnchorNetworking` (payload IDs + envio S2C)
-- Red cliente: `AnchorClientNetworking` (aplica confirm/reject en cliente)
-- Config persistente: `AnchorConfigManager` en `config/koks-anchors.json`
+- Common entrypoint: `com.ppuetate.koksanchors.KoKsAnchors`
+- Client entrypoint: `com.ppuetate.koksanchors.KoKsAnchorsClient`
+- Server mixins: `ServerAnchorPlacementMixin` and `ServerAnchorInteractionMixin`
+- Client mixins: `ClientBlockPlacementMixin` and `ClientAnchorRenderMixin`
+- Networking: `AnchorNetworking` (payload IDs + S2C send)
+- Client networking: `AnchorClientNetworking` (applies confirm/reject)
+- Persistent config: `AnchorConfigManager` in `config/koks-anchors.json`
 
-## Configuracion disponible
+## Available Configuration
 
-- `placementDebounceMs` (default: `50`, rango: `0-500`)
-- `chargeDebounceMs` (default: `50`, rango: `0-500`)
+- `placementDebounceMs` (default: `50`, range: `0-500`)
+- `chargeDebounceMs` (default: `50`, range: `0-500`)
 - `antiGhostEnabled` (default: `true`)
 - `fastRenderUpdate` (default: `true`)
 - `suppressNeighborUpdates` (default: `true`)
 
-## Requisitos
+## Requirements
 
 - JDK **21**
-- Windows, Linux o macOS
-- Conexion a internet para descargar dependencias Gradle la primera vez
+- Windows, Linux, or macOS
+- Internet connection (first run, to download Gradle dependencies)
 
-## Compilacion
+## Build
 
 ### Windows (PowerShell / CMD)
 
@@ -57,21 +57,21 @@ Si buscas soporte, mejoras o nuevas versiones, usa KoHs Mods Suite en lugar de e
 ./gradlew clean build
 ```
 
-Artefactos generados:
+Generated artifacts:
 
 - `build/libs/koks-anchors-<version>.jar`
 - `build/libs/koks-anchors-<version>-sources.jar`
 
-## Ejecucion para desarrollo
+## Development Run
 
 ```bash
 ./gradlew runClient
 ./gradlew runServer
 ```
 
-En Windows usa `gradlew.bat` en lugar de `./gradlew`.
+On Windows, use `gradlew.bat` instead of `./gradlew`.
 
-## Versiones del proyecto
+## Project Versions
 
 - Minecraft: `1.21.10`
 - Fabric Loader: `0.16.9`
@@ -80,7 +80,7 @@ En Windows usa `gradlew.bat` en lugar de `./gradlew`.
 - Cloth Config: `15.0.140`
 - Mod Menu: `11.0.3`
 
-## Licencia
+## License
 
-GPL-3.0-only. Ver archivo `LICENSE`.
+GPL-3.0-only. See `LICENSE`.
 
